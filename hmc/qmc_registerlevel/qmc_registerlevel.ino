@@ -1,10 +1,13 @@
 #include <io.h>
 #include <interrupt.h>
 #include <stdint.h>
-#define address 0x0D
-#define mode 0x09
+//#define address 0x0D
+//#define mode 0x09
 #define mode_type 0x01
+//#include <Wire.h>
+//#include <MechaQMC5883.h>
 
+//MechaQMC5883 qmc;
 uint16_t qmc_dataX;
 uint16_t qmc_dataZ;
 uint16_t qmc_dataY;
@@ -23,12 +26,13 @@ uint8_t qmc_dataZlsb;
 
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600);
   DDRD = 0xFF;
   PORTD = 0xFF;
+ // qmc.init();
   i2c_init();
   i2c_start();
-  i2c_write(address);
+  i2c_write(0x0D);
   i2c_write(0x09);
   i2c_write(0x0A);
   i2c_stop();
@@ -93,7 +97,7 @@ qmcZ |= qmc_dataZlsb ; //////////lsb saved
   Serial.print(qmcY);
   Serial.print("  z: ");
   Serial.println(qmcZ);
- Serial.println(qmc_dataY<<8);
+ //Serial.println(qmc_dataY<<8);
   delay(250);
 
 }

@@ -31,7 +31,7 @@ TCCR1A = 0xAA;
   
 OCR1A = 500;
 OCR1B= 200;
-OCR1C = 300;
+OCR1C = 300;   //666
 
 
 /*

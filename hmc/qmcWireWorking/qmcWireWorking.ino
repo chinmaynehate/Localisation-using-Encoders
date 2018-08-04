@@ -5,9 +5,9 @@ MechaQMC5883 qmc;
 
 void setup() {
   Wire.begin();
-  Serial.begin(9600);
+  Serial.begin(115200);
   qmc.init();
-  //qmc.setMode(Mode_Continuous,ODR_200Hz,RNG_2G,OSR_256);
+ // qmc.setMode(Mode_Continuous,ODR_200Hz,RNG_2G,OSR_256);
 }
 
 void loop() {
@@ -25,5 +25,5 @@ void loop() {
   Serial.print(" a: ");
   Serial.print(azimuth);
   Serial.println();
-  delay(100);
+ // delay(100);
 }
