@@ -5,9 +5,10 @@ int speedMotor = 0;
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(115200);
-DDRB |= (1<<4)|(1<<0)|(0<<1);
-PORTB = (1<<0)|(0<<1);
-
+//DDRB |= (1<<4)|(1<<0)|(0<<1);
+//PORTB = (1<<0)|(0<<1);
+DDRB = 0xFF;
+PORTB = 0xFF;
 }
 
 void loop() {

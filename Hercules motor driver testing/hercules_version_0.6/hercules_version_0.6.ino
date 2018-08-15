@@ -10,7 +10,7 @@ Serial.begin(9600);
 //DDRB |= (1<<6)|(1<<0)|(1<<1);          //pwm pin = B5,,direction pins B2,B3
 DDRB = 0xFF;
 DDRE = 0xFF;
-PORTB = (1<<0)|(0<<1);
+PORTB = (1<<0)|(1<<1);
 ICR1H = 0x02;
 ICR1L = 0x9A;      /////666
 /*TCCR1B |= (1<<WGM12)|(1<<WGM13)(1<<CS11);
@@ -44,7 +44,7 @@ TCCR3B |= (1<<4)|(1<<3)|(1<<1);
 OCR3B = 250;
 OCR3C = 454;*/
 
-for (speedMotor= 0; speedMotor < 500; ++speedMotor){
+/*for (speedMotor= 0; speedMotor < 500; ++speedMotor){
   OCR3B= speedMotor;
   OCR3C= speedMotor;
   OCR3A = speedMotor;
@@ -62,7 +62,7 @@ OCR3B = speedMotor;
 OCR3C= speedMotor;
 OCR3A = speedMotor;
 //ICR1 = speedMotor;
-delay(10);
+delay(10);*/
 }
 //Serial.println(speedMotor);
 }
